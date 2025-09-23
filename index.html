@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Cara ou Coroa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <main class="container">
+        <h1>Cara ou Coroa</h1>
+        <div class="info">
+            <p>Saldo: <span id="saldo">100</span> moedas</p>
+        </div>
+        
+        <div class="jogo">
+            <div class="resultado">
+                <img id="moeda" src="https://via.placeholder.com/150" alt="Moeda" class="virada">
+            </div>
+
+            <div class="botoes-aposta">
+                <button id="apostar-cara">Apostar em Cara</button>
+                <button id="apostar-coroa">Apostar em Coroa</button>
+            </div>
+            <div class="mensagem-resultado">
+                <p id="mensagem"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
