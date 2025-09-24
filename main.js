@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (resultado === aposta) {
                 saldo += apostaValor * 2;
-                mensagemElement.textContent = `Você ganhou! Deu ${resultado}.`;
+                mensagemElement.textContent = `Voce ganhou! Deu ${resultado}.`;
             } else {
-                mensagemElement.textContent = `Você perdeu! Deu ${resultado}.`;
+                mensagemElement.textContent = `Voce perdeu! Deu ${resultado}.`;
             }
 
             isFlipping = false;
