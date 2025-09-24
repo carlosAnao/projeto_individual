@@ -56,27 +56,41 @@ h1 {
 .moeda-container {
     width: 150px;
     height: 150px;
-    margin-bottom: 30px;
     perspective: 1000px;
+    margin-bottom: 30px;
 }
 
 #moeda {
     width: 100%;
     height: 100%;
+    position: relative;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+.moeda-frente, .moeda-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.moeda-frente img, .moeda-verso img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 
-@keyframes girar-moeda {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(1800deg);
-    }
+.moeda-verso {
+    transform: rotateY(180deg);
 }
 
-#moeda.virando {
-    animation: girar-moeda 2s ease-in-out;
+#moeda.girar-para-coroa {
+    transform: rotateY(1980deg);
+}
+
+#moeda.girar-para-cara {
+    transform: rotateY(1800deg);
 }
 
 .botoes-aposta button {

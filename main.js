@@ -7,18 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const SALDO_INICIAL = 100;
     const VALOR_APOSTA = 10;
-    const TEMPO_ANIMACAO_MS = 2000;
-    
-    const LADOS_MOEDA = {
-        cara: {
-            url: 'https://i.imgur.com/2Xy5E6V.png',
-            classe: 'cara'
-        },
-        coroa: {
-            url: 'https://i.imgur.com/uF11y1p.png',
-            classe: 'coroa'
-        }
-    };
+    const TEMPO_ANIMACAO_MS = 1500;
 
     let saldo = SALDO_INICIAL;
     let isFlipping = false;
@@ -38,26 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
         isFlipping = true;
         saldo -= VALOR_APOSTA;
         atualizarSaldoDisplay();
-
-        moedaElement.classList.remove(LADOS_MOEDA.cara.classe, LADOS_MOEDA.coroa.classe);
-        moedaElement.classList.add('virando');
         mensagemElement.textContent = "Girando...";
 
-        setTimeout(() => {
-            const resultado = Math.random() < 0.5 ? 'cara' : 'coroa';
-            const dadosResultado = LADOS_MOEDA[resultado];
-            
-            moedaElement.classList.remove('virando');
-            moedaElement.src = dadosResultado.url;
-            moedaElement.classList.add(dadosResultado.classe);
+        moedaElement.classList.remove('girar-para-cara', 'girar-para-coroa');
 
+        void moedaElement.offsetWidth;
+
+        const resultado = Math.random() < 0.5 ? 'cara' : 'coroa';
+
+        if (resultado === 'cara') {
+            moedaElement.classList.add('girar-para-cara');
+        } else {
+            moedaElement.classList.add('girar-para-coroa');
+        }
+
+        setTimeout(() => {
             if (resultado === aposta) {
                 saldo += VALOR_APOSTA * 2;
                 mensagemElement.textContent = `Você ganhou! Deu ${resultado}.`;
             } else {
                 mensagemElement.textContent = `Você perdeu! Deu ${resultado}.`;
             }
-
+            
             atualizarSaldoDisplay();
             isFlipping = false;
         }, TEMPO_ANIMACAO_MS);
