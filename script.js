@@ -6,8 +6,8 @@ const resultText = document.getElementById('result-text');
 const winsCount = document.getElementById('wins-count');
 const lossesCount = document.getElementById('losses-count');
 
-const headsImageUrl = 'https://i.imgur.com/S2s8vJ8.png';
-const tailsImageUrl = 'https://i.imgur.com/KzBOi3I.png';
+const headsImageUrl = 'img/cara.png';
+const tailsImageUrl = 'img/coroa.png';
 
 let wins = 0;
 let losses = 0;
@@ -53,7 +53,7 @@ function resetGame() {
     losses = 0;
     updateScore();
     resultText.textContent = '';
-    coinImage.src = 'https://i.imgur.com/L1QhW6E.png';
+    coinImage.src = 'img/cara.png'; 
 }
 
 headsButton.addEventListener('click', () => playGame('cara'));
