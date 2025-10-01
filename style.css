@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+}
+h1 {
+    color: #333;
+}
+#coin-image {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0;
+    transition: transform 1s ease-in-out;
+}
+.flipping {
+    transform: rotateY(1800deg);
+}
+#buttons-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+#buttons-container button:hover {
+    background-color: #0056b3;
+}
+#result-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 25px;
+    margin-top: 20px;
+}
+#score {
+    margin-top: 20px;
+    color: #555;
+}
+#score p {
+    margin: 5px 0;
+}
+#reset-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#reset-button:hover {
+    background-color: #c82333;
+}
